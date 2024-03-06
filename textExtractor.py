@@ -2,11 +2,11 @@ import tkinter, PyPDF2
 from tkinter import filedialog 
 
 
-
-
-
-
-
+def openFile():
+    filename = filedialog.askopenfilename(title="Open PDF file", 
+                                                  initialdir='D:\codefirst.io\Tkinter Extract PDF Text',
+                                                  filetypes=[('PDF files', '*.pdf')])
+    print(filename)
 
 
 
@@ -22,10 +22,10 @@ root.title("PDF Text Extractor")
 
 filename_label = tkinter.Label(root, text="No File Selected")
 outputfile_text = tkinter.Text(root)
-
+openfile_button = tkinter.Button(root, text="Open PDF File", command=openFile)
 
 filename_label.pack()
 outputfile_text.pack()
-
+openfile_button.pack()
 
 root.mainloop()
